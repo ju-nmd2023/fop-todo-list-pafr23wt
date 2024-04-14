@@ -12,3 +12,23 @@ h1 {
 footer {
   color: darkslategray;
 }
+
+#todolist {
+  text-align: center;
+}
+
+.intro {
+  padding-bottom: 15px;
+}
+
+footer {
+  margin-top: 30rem;
+  background-color: darkslategray;
+  padding: 80px;
+  border-top: 1px solid black;
+}
+
+#footinfo {
+  color: whitesmoke;
+  background-color: darkslategray;
+}
