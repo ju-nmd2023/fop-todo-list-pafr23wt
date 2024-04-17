@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,15 +9,15 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div id="todolist">
-    <h1>My To Do List</h1>
-    <p class="intro">Fill in your tasks and make things happen!</p>
-    <label id="todolabel" for="To do:">To Do:</label>
-    <input type="text"><button>Add</button>
+    <header>
+      <h1>My To Do List</h1>
+    </header>
+    <main class="container">
+      <article class="list" id="taskList">To do:</article>
+      <article class="cart" id="haveDone">
+        <h1 id="done">Done:</h1>
+      </article>
     </main>
-    <footer>
-      <p id="footinfo">Created by Frida Palm</p></footer>
     <script src="todolist.js"></script>
-  </div>
   </body>
 </html>
