@@ -12,3 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
     taskList.appendChild(taskItem);
   });
 });
+
+// Function to create task element
+function createTaskElement(taskText) {
+  const taskItem = document.createElement("li");
+
+  // Create checkbox
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.addEventListener("change", function () {
+    if (checkbox.checked) {
+      taskItem.classList.add("completed");
+    } else {
+      taskItem.classList.remove("completed");
+    }
+  });
