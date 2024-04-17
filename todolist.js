@@ -27,3 +27,22 @@ function createTaskElement(taskText) {
       taskItem.classList.remove("completed");
     }
   });
+  // Create task text
+  const taskTextElement = document.createElement("span");
+  taskTextElement.textContent = taskText;
+
+  // Create remove button
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "❌";
+  removeButton.addEventListener("click", function () {
+    taskList.removeChild(taskItem);
+    updateLocalStorage();
+  });
+
+  // Append elements to task item
+  taskItem.appendChild(checkbox);
+  taskItem.appendChild(taskTextElement);
+  taskItem.appendChild(removeButton);
+
+  return taskItem;
+}
