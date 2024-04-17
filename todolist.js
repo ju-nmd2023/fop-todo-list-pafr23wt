@@ -3,8 +3,9 @@
 const addButton = document.getElementById("addButton");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
+const removeButton = document.createElement("button");
 
-// Load tasks from localStorage on page load
+// Inspo from ChatGPT
 document.addEventListener("DOMContentLoaded", function () {
   const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
   storedTasks.forEach(function (taskText) {
@@ -12,10 +13,15 @@ document.addEventListener("DOMContentLoaded", function () {
     taskList.appendChild(taskItem);
   });
 });
+// Inspo from ChatGPT
 
 // Function to create task element
 function createTaskElement(taskText) {
   const taskItem = document.createElement("li");
+
+  // Create task text
+  const taskTextElement = document.createElement("span");
+  taskTextElement.textContent = taskText;
 
   // Create checkbox
   const checkbox = document.createElement("input");
@@ -27,21 +33,19 @@ function createTaskElement(taskText) {
       taskItem.classList.remove("completed");
     }
   });
-  // Create task text
-  const taskTextElement = document.createElement("span");
-  taskTextElement.textContent = taskText;
 
   // Create remove button
   const removeButton = document.createElement("button");
-  removeButton.textContent = "❌";
+  removeButton.textContent = "✖";
+  removeButton.classList.add("removeButton");
   removeButton.addEventListener("click", function () {
     taskList.removeChild(taskItem);
     updateLocalStorage();
   });
 
   // Append elements to task item
-  taskItem.appendChild(checkbox);
   taskItem.appendChild(taskTextElement);
+  taskItem.appendChild(checkbox); // Move the checkbox after the task text
   taskItem.appendChild(removeButton);
 
   return taskItem;
