@@ -16,17 +16,17 @@ h1 {
   font-size: 20px;
 }
 
-#addtask {
+.center-container {
   text-align: center;
 }
 
-#taskList {
+#tasks {
   list-style: none;
-  font-size: 20px;
 }
 
-.removeButton {
-  font-size: 1em;
-  border: none;
+.remove-button {
   color: darkslategray;
+  font-size: 1em;
+
+  border: none;
 }
