@@ -31,7 +31,23 @@ function displayListItems() {
       item.innerText = items.name;
       listItemsElement.appendChild(item);
 
-      const
+      const button = document.createElement("button");
+      item.appendChild(button);
+      button.addEventListener("click", () => {
+        listItemsArray.splice(listItemsArray.indexOf(items), 1);
+        localStorage.setItem("listitems", JSON.stringify(listItemsArray));
+
+        displayListItems();
+      });
     }
   }
 }
+
+function loadHandler() {
+  const saveButton = document.getElementById("save");
+  saveButton.addEventListener("click", function () {
+    saveTask();
+  });
+}
+window.addEventListener("load", loadHandler);
+window.addEventListener("load", displayListItems);
