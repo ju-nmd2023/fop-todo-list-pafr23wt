@@ -2,14 +2,14 @@
 
 function saveTasks() {
   const nameElement = document.getElementById("name");
-  let tasks = { name: nameElement.value };
+  const taskName = nameElement.value.trim();
 
-  if (localStorage.tasks === undefined) {
-    localStorage.tasks = JSON.stringify([]);
+  if (!taskName) {
+    return;
   }
 
-  let tasksArray = JSON.parse(localStorage.tasks);
-  tasksArray.push(tasks);
+  let tasksArray = JSON.parse(localStorage.tasks || "[]");
+  tasksArray.push({ name: taskName });
   localStorage.tasks = JSON.stringify(tasksArray);
 
   displayTasks();
