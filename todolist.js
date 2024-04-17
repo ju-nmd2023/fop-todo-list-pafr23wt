@@ -46,3 +46,22 @@ function createTaskElement(taskText) {
 
   return taskItem;
 }
+
+// Function to update localStorage with current tasks
+function updateLocalStorage() {
+  const tasks = [];
+  taskList.querySelectorAll("span").forEach(function (taskTextElement) {
+    tasks.push(taskTextElement.textContent);
+  });
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+addButton.addEventListener("click", function () {
+  const taskText = taskInput.value.trim();
+  if (taskText !== "") {
+    const taskItem = createTaskElement(taskText);
+    taskList.appendChild(taskItem);
+    taskInput.value = ""; // Clear input field after adding task
+    updateLocalStorage();
+  }
+});
