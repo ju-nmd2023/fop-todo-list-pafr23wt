@@ -43,3 +43,27 @@ function displayTasks() {
         }
       });
       item.appendChild(checkbox);
+
+      // Create remove button
+      const removeButton = document.createElement("button");
+      removeButton.textContent = "✖";
+      removeButton.classList.add("remove-button"); // Add a class
+
+      removeButton.addEventListener("click", function () {
+        // Find the index of the task in the array
+        const index = tasksArray.findIndex((t) => t.name === task.name);
+        if (index !== -1) {
+          tasksArray.splice(index, 1); // Remove the task from the array
+          localStorage.tasks = JSON.stringify(tasksArray); // Update localStorage
+          displayTasks(); // Update the display
+        }
+      });
+      item.appendChild(removeButton);
+
+      tasksElement.appendChild(item);
+      //inspo by ChatGPT
+    }
+  }
+}
+
+saveTasks();
