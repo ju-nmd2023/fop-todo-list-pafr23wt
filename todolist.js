@@ -4,6 +4,7 @@ function saveTasks() {
   const nameElement = document.getElementById("name");
   const taskName = nameElement.value.trim();
 
+  //inspo ChatGPT
   if (!taskName) {
     return;
   }
@@ -14,6 +15,7 @@ function saveTasks() {
 
   displayTasks();
 }
+//inspo ChatGPT
 
 const saveButton = document.getElementById("save");
 saveButton.addEventListener("click", function () {
