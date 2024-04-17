@@ -4,22 +4,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List</title>
     <link rel="stylesheet" href="main.css" />
+    <title>To do list</title>
   </head>
-  <body id="content">
+  <body>
     <header>
-      <h1>My To Do List</h1>
+      <h1>My To do list</h1>
     </header>
-    <p id="intro">Add your tasks here and make things happen!</p>
-    <div id="addtask">
-      <label for="taskInput" id="info">To Do:</label>
-      <input id="taskInput" type="text" />
-      <button id="addButton">Add Task</button>
-      <ul id="taskList"></ul>
+    <p id="intro">Add your tasks and make things happen!</p>
+    <div class="center-container">
+      <label>To Do:</label><input id="name" /><button id="save">
+        Add task
+      </button>
+      <ul id="tasks"></ul>
     </div>
-    <script src="todolist.js"></script>
   </body>
+  <script src="todolist.js"></script>
 </html>
