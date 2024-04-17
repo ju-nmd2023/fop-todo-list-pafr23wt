@@ -3,32 +3,22 @@
 * {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: whitesmoke;
+  align-items: center;
 }
 
 h1 {
   color: darkslategray;
-}
-
-footer {
-  color: darkslategray;
-}
-
-#todolist {
   text-align: center;
 }
 
-.intro {
-  padding-bottom: 15px;
+#intro {
+  text-align: center;
 }
 
-footer {
-  margin-top: 30rem;
-  background-color: darkslategray;
-  padding: 80px;
-  border-top: 1px solid black;
+#addtask {
+  text-align: center;
 }
 
-#footinfo {
-  color: whitesmoke;
-  background-color: darkslategray;
+#taskList {
+  list-style: none;
 }
