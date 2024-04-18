@@ -30,3 +30,22 @@ h1 {
 
   border: none;
 }
+
+#save {
+  border-radius: 100px;
+  background-color: darkslategray;
+  color: white;
+  padding: 5px;
+}
+
+#name {
+  border-radius: 100px;
+  padding: 5px;
+  padding-left: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#tasks {
+  color: darkslategray;
+}
