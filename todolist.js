@@ -1,16 +1,15 @@
 /** @format */
 
-// inspo from Garrits video "flip-coin-game"
 function saveTasks() {
   const nameElement = document.getElementById("name");
-  const taskName = nameElement.value.trim();
+  let tasks = { name: nameElement.value };
 
-  if (!taskName) {
-    return;
+  if (localStorage.tasks === undefined) {
+    localStorage.tasks = JSON.stringify([]);
   }
 
-  let tasksArray = JSON.parse(localStorage.tasks || "[]");
-  tasksArray.push({ name: taskName });
+  let tasksArray = JSON.parse(localStorage.tasks);
+  tasksArray.push(tasks);
   localStorage.tasks = JSON.stringify(tasksArray);
 
   displayTasks();
@@ -31,7 +30,7 @@ function displayTasks() {
     for (let task of tasksArray) {
       const item = document.createElement("li");
       item.innerText = task.name;
-      // inspo from Garrits video "flip-coin-game"
+      tasksElement.appendChild(item);
 
       //inspo by ChatGPT
       // Create checkbox
