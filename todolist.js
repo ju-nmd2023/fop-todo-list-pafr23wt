@@ -1,5 +1,6 @@
 /** @format */
 
+//inspo from garrit´s video flip-coin-game
 function saveTasks() {
   const nameElement = document.getElementById("name");
   let tasks = { name: nameElement.value };
@@ -31,8 +32,9 @@ function displayTasks() {
       const item = document.createElement("li");
       item.innerText = task.name;
       tasksElement.appendChild(item);
+      //inspo from garrit´s video flip-coin-game
 
-      //inspo by ChatGPT
+      //inspo by ChatGPT https://chat.openai.com/share/1ed78b6c-7a1e-4877-be9f-b1bbd5ca4b27
       // Create checkbox
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
@@ -62,7 +64,7 @@ function displayTasks() {
       item.appendChild(removeButton);
 
       tasksElement.appendChild(item);
-      //inspo by ChatGPT
+      //inspo by ChatGPT https://chat.openai.com/share/1ed78b6c-7a1e-4877-be9f-b1bbd5ca4b27
     }
   }
 }
