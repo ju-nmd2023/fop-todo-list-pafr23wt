@@ -1,10 +1,10 @@
 /** @format */
 
+// inspo from Garrits video "flip-coin-game"
 function saveTasks() {
   const nameElement = document.getElementById("name");
   const taskName = nameElement.value.trim();
 
-  //inspo ChatGPT
   if (!taskName) {
     return;
   }
@@ -15,7 +15,6 @@ function saveTasks() {
 
   displayTasks();
 }
-//inspo ChatGPT
 
 const saveButton = document.getElementById("save");
 saveButton.addEventListener("click", function () {
@@ -32,6 +31,7 @@ function displayTasks() {
     for (let task of tasksArray) {
       const item = document.createElement("li");
       item.innerText = task.name;
+      // inspo from Garrits video "flip-coin-game"
 
       //inspo by ChatGPT
       // Create checkbox
