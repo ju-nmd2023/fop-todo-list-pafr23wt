@@ -1,9 +1,21 @@
 /** @format */
 
+document.addEventListener("DOMContentLoaded", function () {
+  displayTasks();
+});
+
 //inspo from garrit´s video flip-coin-game
 function saveTasks() {
   const nameElement = document.getElementById("name");
-  let tasks = { name: nameElement.value, completed: false }; // Add completed property
+  const taskName = nameElement.value.trim();
+
+  // Check if name field is empty
+  if (taskName === "") {
+    // If name field is empty, do nothing
+    return;
+  }
+
+  let tasks = { name: taskName, completed: false }; // Add completed property
 
   if (localStorage.tasks === undefined) {
     localStorage.tasks = JSON.stringify([]);
@@ -78,5 +90,3 @@ function displayTasks() {
     }
   }
 }
-
-saveTasks();
